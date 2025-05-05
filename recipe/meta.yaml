@@ -15,6 +15,11 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    # Perl is required implicitly:
+    # $BUILD_PREFIX/bin/meson --internal exe --capture rules/base.lst -- $SRC_DIR/rules/xml2lst.pl rules/base.xml
+    # /usr/bin/env: perl: No such file or directory
+    # see https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/blob/xkeyboard-config-2.44/rules/meson.build?ref_type=tags#L165
+    - perl
     - meson
     - make
   host:
