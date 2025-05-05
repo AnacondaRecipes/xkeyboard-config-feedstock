@@ -15,7 +15,6 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-    - {{ stdlib('c') }}
     - meson
     - make
   host:
@@ -38,7 +37,7 @@ about:
     System implementations (free, open source and commercial).
     The project is targeted to XKB-based systems.
   doc_url: https://www.freedesktop.org/wiki/Software/XKeyboardConfig/
-  dev_url: https://www.freedesktop.org/wiki/Software/XKeyboardConfig/Development/
+  dev_url: https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config
 
 extra:
   recipe-maintainers:
