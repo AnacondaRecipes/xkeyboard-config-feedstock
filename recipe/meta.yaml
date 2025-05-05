@@ -5,7 +5,7 @@ package:
   version: {{ version }}
 
 source:
-  url: http://www.x.org/releases/individual/data/xkeyboard-config/xkeyboard-config-{{ version }}.tar.xz
+  url: https://www.x.org/releases/individual/data/xkeyboard-config/xkeyboard-config-{{ version }}.tar.xz
   sha256: 54d2c33eeebb031d48fa590c543e54c9bcbd0f00386ebc6489b2f47a0da4342a
 
 build:
@@ -15,7 +15,11 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-    - {{ stdlib('c') }}
+    # Perl is required implicitly:
+    # $BUILD_PREFIX/bin/meson --internal exe --capture rules/base.lst -- $SRC_DIR/rules/xml2lst.pl rules/base.xml
+    # /usr/bin/env: perl: No such file or directory
+    # see https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config/-/blob/xkeyboard-config-2.44/rules/meson.build?ref_type=tags#L165
+    - perl
     - meson
     - make
   host:
@@ -38,7 +42,7 @@ about:
     System implementations (free, open source and commercial).
     The project is targeted to XKB-based systems.
   doc_url: https://www.freedesktop.org/wiki/Software/XKeyboardConfig/
-  dev_url: https://www.freedesktop.org/wiki/Software/XKeyboardConfig/Development/
+  dev_url: https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config
 
 extra:
   recipe-maintainers:
