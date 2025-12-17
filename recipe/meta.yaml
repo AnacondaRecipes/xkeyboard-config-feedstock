@@ -14,6 +14,7 @@ build:
 
 requirements:
   build:
+    - {{ stdlib('c') }}
     - {{ compiler('c') }}
     # Perl is required implicitly:
     # $BUILD_PREFIX/bin/meson --internal exe --capture rules/base.lst -- $SRC_DIR/rules/xml2lst.pl rules/base.xml
