@@ -9,8 +9,8 @@ source:
   sha256: 54d2c33eeebb031d48fa590c543e54c9bcbd0f00386ebc6489b2f47a0da4342a
 
 build:
-  number: 0
-  skip: true  # [not linux]
+  number: 1
+  skip: true  # [win]
 
 requirements:
   build:
@@ -22,6 +22,7 @@ requirements:
     - perl
     - meson
     - make
+    - gawk  # [osx]
   host:
     - xorg-xorgproto
     - xorg-libx11
