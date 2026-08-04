@@ -1,4 +1,4 @@
-{% set version = "2.44" %}
+{% set version = "2.48" %}
 
 package:
   name: xkeyboard-config
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://www.x.org/releases/individual/data/xkeyboard-config/xkeyboard-config-{{ version }}.tar.xz
-  sha256: 54d2c33eeebb031d48fa590c543e54c9bcbd0f00386ebc6489b2f47a0da4342a
+  sha256: b77041324f0109f77161ee43743fe04baa485866af8460d31e476ad3f7648fd5
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
 
 requirements:
